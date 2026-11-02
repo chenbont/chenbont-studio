@@ -1,0 +1,21 @@
+# 本仓库只托管说明文档与发行说明，不托管任何源码或二进制产物。
+# 发行版（安装包）通过 GitCode 的 Releases 功能上传，不进 git 历史。
+
+# 编辑器 / 系统
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# 本地草稿或临时文件
+*.tmp
+*.bak
+草稿/
+
+# 不应入库的构建产物（即便误放入也忽略）
+*.exe
+*.dmg
+*.AppImage
+*.apk
+*.zip
+checksums.txt
