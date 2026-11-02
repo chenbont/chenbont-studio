@@ -41,8 +41,8 @@ SOFTWARE.
   Upstream Mcode code remains available under the MIT License; this notice does not alter the upstream license.
 - **Chenbont Studio 自有代码**（在本项目之上新增或修改的部分）：著作权归 Chenbont Studio 所有，受随附的 [LICENSE](./LICENSE)（最终用户许可协议）约束，**不适用 MIT 许可证**。
   Chenbont Studio's own code (added or modified on top of the upstream project) is owned by Chenbont Studio and governed by the accompanying [LICENSE](./LICENSE) (End-User License Agreement) — **it is NOT licensed under MIT**.
-- **商标**：Chenbont Studio、晨邦 及其 Logo 为注册商标，未经授权不得用于衍生产品命名或宣传。
-  Trademarks: Chenbont Studio / 晨邦 and its logos are registered trademarks and may not be used in derivative product naming or promotion without authorization.
+- **商标**：Chenbont Studio、晨邦智研 及其 Logo 为注册商标，未经授权不得用于衍生产品命名或宣传。
+  Trademarks: Chenbont Studio / 晨邦智研 and its logos are registered trademarks and may not be used in derivative product naming or promotion without authorization.
 
 > 本声明为许可合规说明，不构成对上游项目功能或质量的任何承诺。
 > This notice is a licensing compliance statement and implies no warranty regarding the upstream project's features or quality.
