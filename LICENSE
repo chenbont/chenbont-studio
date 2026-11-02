@@ -48,6 +48,8 @@ All rights in the software and its copies, derivatives, documentation, trademark
 5.2 Breach of any term automatically terminates this license; you must then stop using the software and delete all copies.
 
 ## 6. 其他 ｜ Miscellaneous
+6.0 **第三方组件声明 ｜ Third-Party Notices**：本软件基于开源项目 Mcode（https://github.com/huangbh2020/mcode ，MIT 许可证）构建。依 MIT 许可证要求保留的上游版权声明与许可全文见随附的 [THIRD-PARTY-NOTICES.md](./THIRD-PARTY-NOTICES.md)。上游代码持续依 MIT 许可证可用；本协议仅约束 Chenbont Studio 自有代码。
+6.0 **Third-Party Notices**: This software is built upon the open-source project Mcode (https://github.com/huangbh2020/mcode, MIT License). The upstream copyright notice and license text retained as required by MIT are provided in the accompanying [THIRD-PARTY-NOTICES.md](./THIRD-PARTY-NOTICES.md). Upstream code remains available under MIT; this agreement governs only Chenbont Studio's own code.
 6.1 本协议构成双方就本软件达成的完整协议。
 6.1 This agreement is the entire agreement regarding the software.
 6.2 若本协议任一条款被认定为无效，不影响其余条款的效力。

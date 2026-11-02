@@ -12,7 +12,7 @@
 
 ## 软件简介 ｜ Overview
 
-**Chenbont Studio** 是基于 Pi Coding Agent SDK 构建的桌面端 AI 编程 IDE，提供会话管理、文件 / Git / 终端、浏览器预览等能力，并支持通过云端中继服务实现手机远程访问桌面开发环境。
+**Chenbont Studio** 是基于 Pi Coding Agent SDK 构建的桌面端 AI 编程 IDE，提供会话管理、文件 / Git / 终端、浏览器预览等能力，并支持通过云端中继服务实现手机远程访问桌面开发环境。本软件基于开源项目 Mcode（[huangbh2020/mcode](https://github.com/huangbh2020/mcode) ，MIT）二次开发，上游版权与许可声明见 [THIRD-PARTY-NOTICES.md](./THIRD-PARTY-NOTICES.md)。
 
 **Chenbont Studio** is a desktop AI coding IDE built on the Pi Coding Agent SDK. It provides session management, file / Git / terminal access, in-app browser preview, and lets you remotely access your desktop dev environment from a phone via a cloud relay service.
 
