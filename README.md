@@ -17,12 +17,12 @@
 **Chenbont Studio** is a desktop AI coding IDE (smart development workbench) built on the Pi Coding Agent SDK. It provides session management, file / Git / terminal, in-app browser, database management, GitHub integration, and lets you remotely access your desktop dev environment from a phone via a cloud relay service. It is derived from the open-source project Mcode ([huangbh2020/mcode](https://github.com/huangbh2020/mcode), MIT) — see [THIRD-PARTY-NOTICES.md](./THIRD-PARTY-NOTICES.md) for upstream copyright and license notices.
 
 - 当前版本 ｜ Current version：**0.1.56**（2025 年 11 月）
-- 授权方式 ｜ License：专有软件 / 免费分发，源码不公开 ｜ Proprietary / free distribution, source not public
+- 授权方式 ｜ License：专有软件，按官方渠道获取，源码不公开 ｜ Proprietary, distributed via official channels, source not public
 - 适用人群 ｜ Audience：开发者、需要 AI 辅助编程与远程访问的个人与团队 ｜ Developers and teams needing AI-assisted coding and remote access
 
-> 与之配套的云端中继服务 **Studio Relay**（`studio-relay`，Go 单二进制）为开源项目，另见 https://gitcode.com/chenbont/studio-relay 。本仓库仅分发桌面端闭源客户端。
+> 手机端外网远程访问统一由 **Chenbont 官方中继服务**提供，需登录云端账号；中转流量每月含基础额度，超出部分按官方公布单价从钱包余额扣费。本仓库仅分发桌面端闭源客户端。
 >
-> The companion cloud relay service **Studio Relay** (`studio-relay`, single Go binary) is open source at https://gitcode.com/chenbont/studio-relay . This repository distributes only the closed-source desktop client.
+> Off-LAN phone remote access is provided exclusively by the **official Chenbont relay** and requires a cloud account; relayed traffic includes a monthly allowance, with excess charged at the published rate from your wallet balance. This repository distributes only the closed-source desktop client.
 
 ---
 
@@ -64,7 +64,7 @@
 ### 📱 手机端远程控制
 
 - **局域网**：桌面端生成二维码，手机扫码配对（设备令牌认证）。
-- **远程访问**：官方中继零配置扫码即用；或自托管开源 **Studio Relay**（泛域名 + TLS）；或自备 VPS 走 **SSH 反向隧道**。
+- **远程访问**：所有外网连接必须经 **Chenbont 官方中继**，需登录云端账号；连接优先 P2P 直连（不计费），无法穿透时由官方中继转发，中转流量每月含基础额度，超出部分按官方公布单价从钱包余额扣费。不提供自托管中继或 SSH 隧道接入。
 - 手机可看会话实时流、发消息、中断 / 撤销、审批工具、浏览文件与 diff、执行 Git 操作（含 AI 提交信息）。
 - **桌面协作**：控制端通过中继拨号驱动被控端会话（`/api/pi-rpc` 白名单编排）。
 

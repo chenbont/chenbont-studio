@@ -3,7 +3,7 @@
 > Covers only distribution and usage questions — no source code or internal implementation details.
 
 ## 1. Is this open source?
-No. The Chenbont Studio **desktop app** is proprietary (closed-source) software. This repository provides only documentation and release downloads — no source code. Use is governed by the [LICENSE](../LICENSE). The companion cloud relay service **Studio Relay** is open source (https://gitcode.com/chenbont/studio-relay).
+No. The Chenbont Studio **desktop app** is proprietary (closed-source) software. This repository provides only documentation and release downloads — no source code. Use is governed by the [LICENSE](../LICENSE).
 
 ## 2. Download is slow / failing — what now?
 - Check your network, or try again during a different time window;
@@ -17,7 +17,7 @@ Our installers are built and checksum-verified. Some antivirus tools may flag th
 See "Supported Platforms" in [README](../README.md). Linux (.deb and AppImage) is available now; Windows / macOS builds are "Coming soon". Systems below the minimum requirements may not run.
 
 ## 5. Is the software free?
-It is distributed free of charge. This repository is the official download channel — beware of third-party resellers. Some advanced features (e.g. official relay Pro tier, enterprise licensing) may be charged separately; see official announcements.
+The software is obtained through this repository (the official channel) — beware of third-party resellers. Off-LAN remote connections go through the official Chenbont relay and require a cloud account: P2P direct traffic is not metered, while relayed traffic includes a monthly allowance and excess is charged at the published rate from your wallet balance. Top up in the remote-connect panel.
 
 ## 6. Can I resell or redistribute it?
 **No.** Unauthorized redistribution, resale, reverse engineering, or embedding into other products is prohibited — see [LICENSE](../LICENSE).
@@ -26,10 +26,9 @@ It is distributed free of charge. This repository is the official download chann
 Chenbont Studio runs locally; sessions and project data are stored on your machine by default. AI features connect to the model service you configure — see in-app docs and the model provider's terms for data flows. The author does not proactively collect your code. When using the official relay, the relay only forwards encrypted traffic and does not store plaintext.
 
 ## 8. How do I access from my phone?
-Three options:
+Two options:
 1. **LAN**: generate a QR code on the desktop app, scan with your phone;
-2. **Official relay**: zero-config scan-to-connect (free tier: 1 controller + 1 guest; Pro see [中继服务定价](./中继服务定价.md));
-3. **Self-hosted**: deploy the open-source **Studio Relay** (wildcard DNS + TLS), or use an SSH reverse tunnel on your own VPS.
+2. **Official relay**: all off-LAN connections go through the official relay and require signing in to a cloud account in **Settings → Account**; connections prefer P2P direct transport, and relayed traffic includes a monthly allowance with excess charged at the published rate from your wallet balance. Self-hosted relays and SSH tunnels are not supported.
 See [usage.md](./usage.md) for details.
 
 ## 9. Do I need to install a CLI / agent runtime separately?

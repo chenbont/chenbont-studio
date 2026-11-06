@@ -32,15 +32,14 @@ Windows / macOS installers are not yet released (shown as "Coming soon"). Instru
 
 ## 3. Phone Remote Access
 
-Chenbont Studio offers three ways to access your desktop from a phone:
+Chenbont Studio offers two ways to access your desktop from a phone:
 
 1. **LAN**: generate a channel QR code from the desktop app's "Remote Access" panel and scan it with your phone (device-token auth);
-2. **Official relay (zero-config)**: scan-to-connect (free tier: 1 phone controller + 1 guest; Pro adds more devices — see [docs/中继服务定价.md](./中继服务定价.md));
-3. **Self-hosted / SSH tunnel**: deploy the open-source relay service **Studio Relay** on your own server (https://gitcode.com/chenbont/studio-relay; wildcard DNS and TLS required), or set up an SSH reverse tunnel on your own VPS.
+2. **Official relay**: all off-LAN connections must go through the official Chenbont relay. Sign in to your cloud account with an email verification code in **Settings → Account**, then scan the QR code shown on the desktop. Connections prefer P2P direct transport (not metered); when traversal fails, the official relay forwards traffic, which includes a monthly allowance with excess charged at the published rate from your wallet balance. Top up from the account card in the remote-connect panel. Self-hosted relays and SSH tunnels are not supported.
 
 From the phone you can watch sessions stream live, send messages, interrupt or rewind turns, approve tool calls, browse files & diffs, and run git operations (including AI commit messages).
 
-> Studio Relay is a separate open-source project; its deployment and operations are outside the scope of this closed-source desktop client.
+> The cloud relay is operated by the official team; no self-deployment is required.
 
 ## 4. Upgrade & Uninstall
 
