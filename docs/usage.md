@@ -20,24 +20,26 @@ Windows / macOS installers are not yet released (shown as "Coming soon"). Instru
 ## 2. First Launch
 
 1. Complete the initial setup prompts on first launch.
-2. Configure your AI model in **Settings → Models** (any OpenAI-compatible / Responses API endpoint is supported) — the underlying model is configured by you.
-3. Create or open a session to start AI-assisted coding. Built-in capabilities include:
-   - **File management**: Monaco editor (30+ languages), file tree, three views (Edit / Diff / Preview);
+2. Configure your AI model in **Settings → Model Configuration** (any OpenAI-compatible / Responses API endpoint is supported); you can also assign different models per role (chat, AI commit messages, merge-conflict resolution) on the same page.
+3. Pick an engine when creating a session (**Claude Code / Pi / Codex / OpenCode**). The matching agent runtime is downloaded automatically on first use — no separate CLI install.
+4. Create or open a session to start AI-assisted coding. Built-in capabilities include:
+   - **File management**: Monaco editor (30+ languages), file tree, three views (Edit / Diff / Preview), LSP language services;
    - **Git**: multi-repo management, branch switching, history, AI-generated commit messages, AI merge-conflict resolution;
    - **Terminal**: multi-tab, keeps running when switching projects;
-   - **Browser preview**: multi-tab, element picking, agent-driven automation;
+   - **Browser preview**: multi-tab, device emulation, element picking, agent-driven automation;
    - **Database management**: SQLite / MySQL / PostgreSQL with AI natural-language SQL generation;
    - **GitHub integration**: browse / merge PRs, manage issues;
+   - **Multi-agent orchestration**: decomposable goals auto-split into parallel sub-agents with a live task-graph canvas;
    - **Automation & scheduled tasks**: once / interval / daily / weekly / monthly / cron.
 
 ## 3. Phone Remote Access
 
-Chenbont Studio offers two ways to access your desktop from a phone:
+Chenbont Studio offers two ways to control your desktop from a phone; both live under **“Remote Control”** in the left sidebar:
 
-1. **LAN**: generate a channel QR code from the desktop app's "Remote Access" panel and scan it with your phone (device-token auth);
-2. **Official relay**: all off-LAN connections must go through the official Chenbont relay. Sign in to your cloud account with an email verification code in **Settings → Account**, then scan the QR code shown on the desktop. Connections prefer P2P direct transport (not metered); when traversal fails, the official relay forwards traffic, which includes a monthly allowance with excess charged at the published rate from your wallet balance. Top up from the account card in the remote-connect panel. Self-hosted relays and SSH tunnels are not supported.
+1. **LAN**: on the same network, the desktop shows a pairing QR code and a 6-digit code — scan it (or enter the pairing ID + code) on your phone (device-token auth);
+2. **Official relay**: off-LAN connections must go through the official Chenbont relay. In the **Remote Control → Allow external access** panel, sign in to your cloud account with an **email verification code** and turn the switch on, then show the QR code to your phone. Connections prefer P2P direct transport (not metered); when traversal fails, the official relay forwards traffic, which includes a monthly allowance with excess charged at the published rate from your wallet balance — top up from the account card in the same panel. Self-hosted relays and SSH tunnels are not supported.
 
-From the phone you can watch sessions stream live, send messages, interrupt or rewind turns, approve tool calls, browse files & diffs, and run git operations (including AI commit messages).
+From the phone you can watch sessions stream live, send messages, interrupt or rewind turns, approve tool calls, browse files & diffs, and run git operations (including AI commit messages). Paired devices show their online status in the panel and can be revoked one by one.
 
 > The cloud relay is operated by the official team; no self-deployment is required.
 

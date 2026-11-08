@@ -20,9 +20,9 @@
 - 授权方式 ｜ License：专有软件，按官方渠道获取，源码不公开 ｜ Proprietary, distributed via official channels, source not public
 - 适用人群 ｜ Audience：开发者、需要 AI 辅助编程与远程访问的个人与团队 ｜ Developers and teams needing AI-assisted coding and remote access
 
-> 手机端外网远程访问统一由 **Chenbont 官方中继服务**提供，需登录云端账号；中转流量每月含基础额度，超出部分按官方公布单价从钱包余额扣费。本仓库仅分发桌面端闭源客户端。
+> 手机端外网远程访问统一由 **Chenbont 官方中继服务**提供，需在应用内用邮箱验证码登录云端账号；中转流量每月含基础额度，超出部分按官方公布单价从钱包余额扣费。本仓库仅分发桌面端闭源客户端。
 >
-> Off-LAN phone remote access is provided exclusively by the **official Chenbont relay** and requires a cloud account; relayed traffic includes a monthly allowance, with excess charged at the published rate from your wallet balance. This repository distributes only the closed-source desktop client.
+> Off-LAN phone remote access is provided exclusively by the **official Chenbont relay** and requires a cloud account (email verification code sign-in inside the app); relayed traffic includes a monthly allowance, with excess charged at the published rate from your wallet balance. This repository distributes only the closed-source desktop client.
 
 ---
 
@@ -30,8 +30,8 @@
 
 ### 🤖 AI 引擎 + 自配模型
 
-- 基于 **Pi Coding Agent SDK** 构建，模型由你自行配置：在**设置 → 模型**中填写任意 OpenAI 协议 / Responses API 端点，成本自控。
-- 支持 **Claude / Pi / Codex / OpenCode 多引擎**（`AgentProvider` 抽象层），按会话选择引擎，界面与历史不变。
+- 基于 **Pi Coding Agent SDK** 构建，模型由你自行配置：在**设置 → 模型配置**中填写任意 OpenAI 协议 / Responses API 端点，成本自控。
+- 支持 **Claude Code / Pi / Codex / OpenCode 四种引擎**（`AgentProvider` 抽象层），按会话切换引擎，界面与会话历史不变。
 - 按角色分配模型：普通对话、AI 提交信息、合并冲突解决可分别使用不同模型；API Key 经 Electron `safeStorage` 加密存储。
 
 ### 💬 实时对话与多会话
@@ -39,6 +39,7 @@
 - 消息按 token **实时流式渲染**为结构化卡片（思考 / 工具调用 / 工具结果 / 图片）。
 - **工具审批**：允许 / 始终允许 / 拒绝，按会话维护待审批队列；**计划模式**先调研后执行。
 - 每轮文件快照 + 一键「撤销本轮」；附加文件、粘贴图片、斜杠命令、**语音输入**。
+- **子会话 / 轮次流程**：右栏可展开子会话与每轮执行流，一个主任务下的多段工作互不干扰。
 - 会话持久化 SQLite，支持续传与自动归档；多项目 / 分组 / 置顶 / 搜索。
 - **工作树会话**：隔离 git worktree 并行会话，一键合并回主检出。
 
@@ -51,33 +52,41 @@
 - **语言服务器（LSP）**：TypeScript / Python / Go / Java 一键安装启用，定义 / 引用 / 悬停 / 实时诊断。
 - **数据库管理**：内置 SQLite / MySQL / PostgreSQL 客户端，表结构浏览、SQL 执行、**AI 自然语言生成 SQL**（两阶段检索 + 执行验证闭环）。
 - **GitHub 集成**：浏览 / 合并 PR、管理 Issue、从已推送分支创建 PR。
+- **项目反馈收件箱**：把会话里的问题与建议留给项目，讨论与实际工作紧密关联。
+
+### 🧠 多 Agent 编排
+
+- 可分解的任务自动拆成多个子 agent 并行执行，**任务图画布**实时展示节点状态、依赖闸门与各 worker 的报告。
+- 可在输入框手动开启自动编排，或用 `@agent` 指定并行分派；编排面板随会话出现，没有编排时自动隐藏。
 
 ### ⏰ 自动化与定时任务
 
 - 定义定时任务驱动 agent 定时工作，六种触发方式：**一次性 / 间隔 / 每天 / 每周 / 每月 / cron**，带「下次运行」预览。
+- 侧边栏实时显示进行中的任务数量，任务与每次运行实例都可在定时任务页查看。
 
 ### 🧩 插件、MCP 与技能
 
 - 从市场（git 仓库 / 本地目录 / zip）安装 agent 插件，默认**禁用**并先做组件审查；插件可携带 skills、命令、子代理、MCP server、hooks。
 - 管理 MCP 服务器（stdio / HTTP，远程 OAuth 登录）；内置 SKILL.md 编辑器管理技能。
 
-### 📱 手机端远程控制
+### 📱 手机远程控制
 
-- **局域网**：桌面端生成二维码，手机扫码配对（设备令牌认证）。
-- **远程访问**：所有外网连接必须经 **Chenbont 官方中继**，需登录云端账号；连接优先 P2P 直连（不计费），无法穿透时由官方中继转发，中转流量每月含基础额度，超出部分按官方公布单价从钱包余额扣费。不提供自托管中继或 SSH 隧道接入。
+- 桌面端生成**配对二维码与 6 位验证码**，手机扫码或输码即可配对（设备令牌认证）；已配对设备列表可实时查看在线状态并逐个断开。
+- **局域网直连**：手机与电脑在同一网络时扫码即用。
+- **外网访问**：所有外网连接必须经 **Chenbont 官方中继**，需在应用内用邮箱验证码登录云端账号；连接优先 P2P 直连（不计费），无法穿透时由官方中继转发，中转流量每月含基础额度，超出部分按官方公布单价从钱包余额扣费。不提供自托管中继或 SSH 隧道接入。
 - 手机可看会话实时流、发消息、中断 / 撤销、审批工具、浏览文件与 diff、执行 Git 操作（含 AI 提交信息）。
 - **桌面协作**：控制端通过中继拨号驱动被控端会话（`/api/pi-rpc` 白名单编排）。
 
 ### ⚙️ 丰富的设置
 
-常规、外观（含**手绘主题**：纸面 / 牛皮纸）、快捷键、模型、技能、通知、Git、终端、浏览器、语言服务器、鼠标手势、语音输入、MCP、插件、运行时、用量统计、关于。
+常规、外观（含**手绘主题**：纸面 / 牛皮纸）、模型配置、快捷键、语音输入、技能、MCP、插件、消息通知、Git、终端、浏览器、远程协作、LSP、用量统计、关于。
 
 ### 🔄 其他
 
-- **按需运行时**：agent 运行时（Pi / Claude / Codex）不再打包进安装包，首次使用自动下载，安装包体积大幅减小；在**设置 → 运行时**管理。
-- **自动更新**（electron-updater）：从 GitHub Releases 拉取 `latest*.yml` 自动升级。
+- **按需运行时**：agent 运行时（Pi / Claude / Codex）不再打包进安装包，首次使用自动下载，安装包体积大幅减小；运行时组件随插件与模型配置一同管理，无需手动安装 CLI。
+- **自动更新**（electron-updater）：从 GitHub Releases 拉取 `latest*.yml` 自动升级，**设置 → 关于** 中可手动检查。
 - **团队反馈**：收集并分享会话反馈，讨论与工作紧密关联。
-- **10+ 种界面语言**：中文、英文、阿拉伯语、德语、西班牙语、法语、印尼语、日语、韩语、葡萄牙语、俄语、越南语等。
+- **12 种界面语言**：中文、英文、阿拉伯语、德语、西班牙语、法语、印尼语、日语、韩语、葡萄牙语、俄语、越南语。
 
 ---
 
@@ -89,11 +98,14 @@ Please download the installer for your platform from the **GitHub Releases** pag
 
 | 平台 ｜ Platform | 文件 ｜ File | 说明 ｜ Notes |
 | --- | --- | --- | --- |
-| Linux (.deb) | `Chenbont-Studio-0.1.56-amd64.deb` | Debian/Ubuntu 安装包 |
-| Linux (AppImage) | `Chenbont-Studio-0.1.56-x86_64.AppImage` | 免安装可执行包 |
-| Windows | `Chenbont-Studio-0.1.56-win-x64.exe` | 敬请期待 ｜ Coming soon |
-| macOS | `Chenbont-Studio-0.1.56-mac.dmg` | 敬请期待 ｜ Coming soon |
+| Linux (.deb) | `Chenbont-Studio-0.1.56-amd64.deb` | Debian/Ubuntu 安装包 ｜ Debian/Ubuntu package |
+| Linux (AppImage) | `Chenbont-Studio-0.1.56-x86_64.AppImage` | 免安装可执行包 ｜ Portable, no install |
+| Windows | `Chenbont-Studio-0.1.56-x64.exe` | 敬请期待 ｜ Coming soon |
+| macOS | `Chenbont-Studio-0.1.56-arm64.dmg` | 敬请期待 ｜ Coming soon |
 
+> 文件名遵循 `Chenbont-Studio-<版本>-<架构>.<扩展名>`；Windows 提供 x64 安装包（NSIS），macOS 同时提供 dmg 与 zip。
+> File names follow `Chenbont-Studio-<version>-<arch>.<ext>`; Windows ships an x64 NSIS installer, macOS ships both dmg and zip.
+>
 > 下载地址：在本仓库页面点击 **Releases**（发行版）标签，选择最新版本。
 > Download: open the **Releases** tab on this repository page and pick the latest version.
 > 校验文件完整性请参考各发行版的 `checksums.txt`。
