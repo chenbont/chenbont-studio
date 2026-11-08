@@ -96,12 +96,12 @@
 
 Please download the installer for your platform from the **GitHub Releases** page:
 
-| 平台 ｜ Platform | 文件 ｜ File | 说明 ｜ Notes |
-| --- | --- | --- | --- |
-| Linux (.deb) | `Chenbont-Studio-0.1.56-amd64.deb` | Debian/Ubuntu 安装包 ｜ Debian/Ubuntu package |
-| Linux (AppImage) | `Chenbont-Studio-0.1.56-x86_64.AppImage` | 免安装可执行包 ｜ Portable, no install |
-| Windows | `Chenbont-Studio-0.1.56-x64.exe` | 敬请期待 ｜ Coming soon |
-| macOS | `Chenbont-Studio-0.1.56-arm64.dmg` | 敬请期待 ｜ Coming soon |
+| 平台 / Platform | 文件 / File | 说明 / Notes |
+| --- | --- | --- |
+| Linux (.deb) | `Chenbont-Studio-0.1.56-amd64.deb` | Debian/Ubuntu 安装包 / package |
+| Linux (AppImage) | `Chenbont-Studio-0.1.56-x86_64.AppImage` | 免安装可执行包 / portable |
+| Windows | `Chenbont-Studio-0.1.56-x64.exe` | 敬请期待 / coming soon |
+| macOS | `Chenbont-Studio-0.1.56-arm64.dmg` | 敬请期待 / coming soon |
 
 > 文件名遵循 `Chenbont-Studio-<版本>-<架构>.<扩展名>`；Windows 提供 x64 安装包（NSIS），macOS 同时提供 dmg 与 zip。
 > File names follow `Chenbont-Studio-<version>-<arch>.<ext>`; Windows ships an x64 NSIS installer, macOS ships both dmg and zip.
@@ -115,11 +115,11 @@ Please download the installer for your platform from the **GitHub Releases** pag
 
 ## 支持平台 ｜ Supported Platforms
 
-| 平台 ｜ Platform | 最低版本要求 ｜ Minimum requirement |
-| --- | --- | --- |
-| Linux | glibc 2.31+ 的 x86_64 发行版（Debian 11 / Ubuntu 20.04+） |
-| Windows | Windows 10 64 位及以上 ｜ Windows 10 x64 and later |
-| macOS | macOS 11 及以上 ｜ macOS 11 and later |
+| 平台 / Platform | 最低版本要求 / Minimum requirement |
+| --- | --- |
+| Linux | glibc 2.31+ 的 x86_64 发行版(Debian 11 / Ubuntu 20.04+) |
+| Windows | Windows 10 64 位及以上 / Windows 10 x64 and later |
+| macOS | macOS 11 及以上 / macOS 11 and later |
 
 ---
 
